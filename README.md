@@ -1,6 +1,6 @@
 ## Welcome
 
-<img title="BSPWM-Dracula" src="screenshots/bspwm_rice_laptop_2.png" alt="img" align="center" width="" data-align="right">
+<img title="BSPWM-Dracula" src="screenshots/bspwm_rice_laptop.png" alt="img" align="center" width="" data-align="right">
 
 This is my very first attempt to rice Binary Space Partitioning Window Manager (*bspwm*). I am providing a fully <b>working enviroment</b> and a complete [sxhkd cheat-sheet](cheat_sheet.md) to assist the new GNU/Linux user to get familiar with bspwm and understand its full potential. My configuration files include a [Dracula](https://draculatheme.com/) themed polybar with many useful modules. 
 
