@@ -1,0 +1,308 @@
+#!/bin/bash
+#
+############################################
+#
+# Key bindings
+# Conf file written by Georgios Charalampous
+#
+############################################
+
+
+
+# Reload sxhkd
+super + shift + r
+	$HOME/.config/bspwm/bspwmrc
+
+# Reload sxhkd
+super + shift + s
+	pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Key-bindings are Reloaded'
+
+# Arch-linux logout
+super + Escape
+	archlinux-logout
+
+# Close Focused Window
+super + q
+	bspc node --close
+
+# Kill Focused Window
+super + shift + q
+	bspc node --kill
+
+
+############################################
+# Windows  Focus 
+############################################
+
+
+# Focus to the window in the given direction
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node --{focus,swap} {west,south,north,east}
+
+super + {_,shift + } {h,j,k,l}
+	bspc node --{focus,swap} {west,south,north,east}
+
+# Focus to the next/previous window on the active desktop
+super + {_,shift + }n
+	bspc node --focus {next,prev}.window
+
+# Focus parent/brother/first/second
+super + {p,b,comma,period}
+	bspc node --focus @{parent,brother,first,second}.local
+
+
+############################################
+# Desktop Focus 
+############################################
+
+
+# Focus Selected Desktop
+super + {1-9,0}
+	bspc desktop --focus '^{1-9,10}'
+
+# Select Next/Previous Desktop
+super + {_,shift + }Tab
+	bspc desktop --focus {next,prev}
+
+
+############################################
+# Window Management
+############################################
+
+
+# Set the Window State
+super + {f,t,shift+t,s}
+	bspc node --state {~fullscreen,~tiled,~pseudo_tiled,~floating}
+
+# Alternate Between the Tiled and Monocle Layout
+super + m
+	bspc desktop -l next
+
+# Set the Window State
+super + {f,t,shift+t,s}
+	bspc node --state {~fullscreen,~tiled,~pseudo_tiled,~floating}
+
+# Alternate Between the Tiled and Monocle Layout
+super + m
+	bspc desktop -l next
+
+# Send the marked window to the newest preselected
+super + y
+	bspc node -n 'last.!automatic.local'
+
+# Swap the current node with the biggest node
+super + g
+	bspc node -s biggest.local
+	
+
+############################################
+# Window Flags
+############################################
+
+
+# Set Flags
+# Marked: Is marked (useful for deferred actions). A marked node becomes unmarked after being sent on a preselected node.
+# Locked: Ignores the node --close message.
+# Sticky: Stays in the focus window of its monitor
+# Private: Tries to keep the same tiling position
+super + ctrl + {m,x,y,z}
+	bspc node --flag {marked,locked,sticky,private}
+
+
+############################################
+# Window Reisizing and Positioning
+############################################
+
+
+# Resize Window Outwards
+super + alt + {h,j,k,l}
+	STEP=20; SELECTION={1,2,3,4}; \
+    bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || 
+    bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
+
+
+# Flip Layout Horizontal/Vertical
+super + shift + space
+	bspc node @parent -R 90
+
+
+############################################
+# Preselection / Receptacles
+############################################
+
+
+# Insert Preselection/Receptacle
+super + ctrl + {h,j,k,l}
+	bspc node --presel-dir ~{west,south,north,east}
+
+super + ctrl + {Left,Down,Up,Right}
+	bspc node --presel-dir ~{west,south,north,east}
+
+# Cancel Preselection
+super + ctrl + space
+	bspc node --presel-dir cancel
+	
+# Define Splitting ration
+super + ctrl + {1-9}
+	bspc node --presel-ratio 0.{1-9}
+
+
+############################################
+# Desktop Management
+############################################
+
+
+# Send Focus Window to Desktop
+super + shift + {1-9,0}
+	id = $(bspc query --nodes --node); bspc node -d ^{1-9,10}; bspc node -f ${id}}
+
+# Send Focused Desktop to the Monitor of Target Desktop
+super + ctrl + shift + {1-9,0}
+	bspc desktop -m `bspc query -M -d {1-9,10} --names` --follow
+
+#send focused desktop to next/previous/{dir} monitor
+super + ctrl + shift + {n,p,h,j,k,l}
+	bspc desktop -m {next,prev,west,south,north,east} --follow
+
+
+############################################
+# Applications
+############################################
+
+
+# Terminal
+ctrl + alt + t
+	alacritty	
+
+# Firefox
+ctrl + alt + f
+	firefox
+
+# Thunar
+ctrl + alt + b
+	thunar
+
+# Flameshot
+ctrl + alt + s
+	flameshot gui
+
+# Calcurse
+ctrl + alt + c
+	tdrop -am -w 60% -x 20% -y 30% alacritty -e calcurse
+
+
+############################################
+# Drop-down Applications
+############################################
+
+
+# Rofi
+super + F1
+	rofi -modi drun,run -show drun -show-icons
+
+# Dropdown Terminal Sessions 0,1,2,and 3
+super + F2
+	tdrop -am -w 60% -x 20% -y 40 -n 0 alacritty
+
+super + F3
+	tdrop -am -w 60% -x 20% -y 40 -n 1 alacritty
+
+super + F4
+	tdrop -am -w 60% -x 20% -y 40 -n 2 alacritty
+
+super + F5
+	tdrop -am -w 60% -x 20% -y 40 -n 3 alacritty
+
+# Dropdown File-manager Thunar
+super + F6
+	tdrop -am -w 60% -x 20% -y 30% thunar
+
+# Ranger floating
+super + F7
+	tdrop -am -w 60% -x 20% -y 30% -n 5 alacritty -e ranger
+
+# Music Player
+super + F8
+	tdrop -am -w 60% -x 20% -y 30% -n 6 alacritty -e mocp	
+
+# email-client
+super + F9
+	tdrop -am -w 60% -x 20% -y 30% -n 7 alacritty -e mutt
+
+
+
+############################################
+# Applications
+############################################
+
+
+# Print screen
+Print
+	flameshot screen -c	
+
+
+############################################
+# Menu
+############################################
+
+
+# Rofi
+super + r
+	rofi -modi drun,run -show drun -show-icons
+
+
+
+############################################
+# Mouse 
+############################################
+
+
+# Window Gap
+super + button{4,5}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+
+
+############################################
+# Multimedia Keys [laptops]
+############################################
+
+#Brightness up
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+#Brightness down
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+#Raises volume
+XF86AudioRaiseVolume
+    amixer set Master 10%+
+
+#Lowers volume
+XF86AudioLowerVolume
+    amixer set Master 10%-
+
+#Mute
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle
+
+############################################
+# Miscallaneous
+############################################
+
+
+# Hide/Show Polybar
+ctrl + alt + p
+	polybar-msg cmd toggle
+
+# Picom Toggle On/Off
+ctrl + alt + o
+	~/.config/bspwm/scripts/picom-toggle.sh
+
+# Variety Wallpaper Previous/Next/Favorite/Delete (Check)
+ctrl + alt + v + {Left,Right,f,d}
+	variety -{p,n,f,t}
+
+# Increase/decrease window gap on focused desktop
+super + button{4,5}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 2 ))
