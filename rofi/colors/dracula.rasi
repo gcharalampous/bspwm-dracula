@@ -1,0 +1,69 @@
+/*******************************************************
+ * ROFI Dracula theme
+ * Maintainer: gcharalampous <gchara14@gmail.com>
+ *******************************************************/
+
+
+* {
+    background:             #282A36;
+    current:                #44475a;
+    foreground:             #F8F8F2;
+    cyan:                   #8BE9FD;
+    comment:                #6272A4;
+    cyan:                   #8BE9FD;
+    green:                  #50FA7B;
+    orange:                 #FFB86C;
+    pink:                   #FF79c6;
+    purple:                 #BD93F9;
+    red:                    #FF5555;
+    yellow:                 #F1FA8C;
+}
+
+
+
+* {
+
+    spacing:                     0;
+    rad:                         5px;
+    background-color:            @background;
+    separatorcolor:              @background;
+    border-color:                @purple;
+
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    
+    urgent-foreground:           @foreground;
+    urgent-background:           @red;
+
+    active-foreground:           @foreground;
+    active-background:           @background;
+
+
+
+    selected-normal-foreground:  @background;
+    selected-normal-background:  @purple;
+
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @background;
+
+    selected-urgent-foreground:  rgba ( 249, 249, 249, 100 % );
+    selected-urgent-background:  rgba ( 165, 66, 66, 100 % );
+
+    selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
+    selected-active-background:  rgba ( 68, 145, 237, 100 % );
+
+
+    alternate-active-foreground: @foreground;
+    alternate-active-background: @background;
+
+
+    lightfg:                     @foreground;
+    lightbg:                     @background;
+
+    alternate-urgent-background: rgba ( 75, 81, 96, 90 % );
+    background:                  rgba ( 45, 48, 59, 95 % );
+    alternate-urgent-foreground: @urgent-foreground;
+
+
+}
+

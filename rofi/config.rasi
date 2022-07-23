@@ -1,10 +1,165 @@
-@theme "themes/default"
+
+/*******************************************************
+* ROFI configs for bspwm
+* Author: gcharalampous <gchara14@gmail.com>
+*******************************************************/
+
+@import "~/.config/rofi/colors/dracula.rasi"
 
 configuration {
-modi: "run";
-display-drun: "Apps";
-drun-display-forma1: "{name}";
-font: "Fira Code Retina 11";
-show-icons: true;
-icon-theme: "Dracula";
+    modi:                               "run";
+    display-drun:                       "Search";
+    drun-display-format:                "{name}";
+    font:                               "Fira Code Retina 11";
+    icon-theme:                         "Dracula";
+    scroll-method:                      0;
+    show-icons:                         true;
+    disable-history:                    false;
+    sidebar-mode:                       false;
+}
+
+
+window {
+    border:                             1px;
+    padding:                            0em;
+    transparency:                       "screenshot";
+    width:                              500px;
+    background-color:                   @background;
+}
+
+
+mainbox {
+    children:                           [ inputbar, listview ];
+    border:                             0;
+    padding:                            1em;
+    spacing:                            2em;
+}
+
+
+message {
+    border:       2px 0px 0px ;
+    padding:      1px ;
+}
+
+
+textbox {
+    text-color: @foreground;
+}
+
+
+inputbar {
+    children:                           [ prompt, entry ];
+    spacing:                            0;
+    border:                             0px dash;
+    border-radius:                      @rad;
+    background-color:                   @purple;
+}
+
+
+prompt {
+    vertical-align:                     0.5;
+    padding:                            1.5%;
+    background-color:                   @purple;
+    text-color:                         @background;
+}
+
+entry {
+    vertical-align:                     0.5;
+    padding:                            1.0%;
+    text-color:                         @green;
+    background-color:                   @green;
+    placeholder:                        "";
+}
+
+
+listview {
+    lines:                              2;
+    columns:                            4;
+    spacing:                            0px;
+    padding:                            2px 0px 0px;
+    scrollbar:                          false;
+    cycle:                              false;
+    cursor:                             pointer;
+    dynamic:                            true;
+}
+
+
+element {
+    vertical-align:                     0.5;
+    orientation:                        vertical;
+    padding:                            1em;
+    cursor:                             pointer;
+    background-color:                   @background;
+    border-radius:                      @rad;
+}
+
+
+
+element-text {
+    horizontal-align:                   0.5;
+    cursor:                             pointer;
+    background-color:                   inherit;
+    text-color:                         inherit;
+    expand:                             true;
+}
+
+
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+
+
+
+element-icon {
+    horizontal-align:                   0.5;
+    cursor:                             pointer;
+    size:                               48px;
+}
+
+
+element select {
+    cursor:                             pointer;
+    text-color:                         @pink;
+    background-color:                   @green;
+}
+
+
+entry {
+    cursor:                             text;
+    background-color:                   @background;
+    text-color:                         @foreground;
 }
