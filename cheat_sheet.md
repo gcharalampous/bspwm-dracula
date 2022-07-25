@@ -387,6 +387,10 @@
     <td><kbd>Super</kbd> + <kbd>F1</kbd> or <kbd>Super</kbd> + <kbd>r</kbd></ </td>
     <td>Rofi Main Menu</td> 
   </tr>
+    <tr>
+    <td><kbd>Super</kbd> + <kbd>x</kbd></td>
+    <td>Rofi Power Menu</td> 
+  </tr>
 
 </div>
 </div>

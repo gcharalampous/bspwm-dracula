@@ -1,0 +1,122 @@
+
+/*******************************************************
+* ROFI configs for bspwm
+* Author: gcharalampous <gchara14@gmail.com>
+*******************************************************/
+
+@import "~/.config/rofi/colors/active-color.rasi"
+
+
+configuration {
+    font:                           "Symbols Nerd Font 15";
+    show-icons:                     false;
+	icon-theme: 					"Dracula";
+    drun-display-format:            "{name}";
+    disable-history:                false;
+	sidebar-mode: 					false;
+}
+
+
+
+window {
+    border:                         0px;
+    transparency:                   "real";
+    background-color:               @background;
+    text-color:                     @foreground;
+    border-radius:                  0px;
+    height:                         28.5%;
+    width:                          50%;
+    location:                       center;
+    padding:                        0em;
+}
+
+prompt {
+    enabled: 						true;
+    background-color:               @background;
+    text-color:                     @purple;
+    border-color:                   @purple;
+
+}
+
+textbox-prompt-colon {
+	expand: 						false;
+	str: 							"";
+    text-color:                     @green;
+    padding:                        0.5% 0.5% 0.5% 0%;
+
+}
+
+inputbar {
+	children: 						[ textbox-prompt-colon, prompt ];
+    background-color:               @background;
+    expand:                         false;
+    margin:                         0% 21.3% 0% 0%;
+    padding:                        0.0% 0.0% 0.0% 0%;
+    position:                       center;
+    border-radius:                  @rad;
+    border-color:                   @purple;
+
+}
+
+listview {
+    background-color:               @background;
+    margin:                         0% 0% 0% 0%;
+    spacing:                        2%;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         horizontal;
+}
+
+mainbox {
+    background-color:               @background;
+    children:                       [ inputbar, listview ];
+    spacing:                        3.5%;
+    padding:                        4% 0% 0% 2%;
+}
+
+element {
+    background-color:               @current;
+    text-color:                     @foreground;
+    orientation:                    horizontal;
+    border-radius:                  @rad;
+}
+
+element-text {
+    background-color:               inherit;
+    text-color:                     inherit;
+	font:							"Symbols Nerd Font 32";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         2.5% 2.7% 2.5% 2.7%;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color:               @urgent;
+    text-color:                     @foreground;
+    border-radius:                  @rad;
+}
+
+element normal.active,
+element alternate.active {
+    background-color:               @active-background;
+    text-color:                     @active-foreground;
+}
+
+element selected {
+    background-color:               @selected-normal-background;
+    text-color:                     @selected-normal-foreground;
+    border-radius:                  @rad;
+}
+
+element selected.urgent {
+    background-color:               @urgent;
+    text-color:                     @foreground;
+}
+
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+

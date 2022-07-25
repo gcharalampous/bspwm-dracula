@@ -4,13 +4,13 @@
 * Author: gcharalampous <gchara14@gmail.com>
 *******************************************************/
 
-@import "~/.config/rofi/colors/dracula.rasi"
+@import "~/.config/rofi/colors/active-color.rasi"
 
 configuration {
     modi:                               "run";
-    display-drun:                       "Search";
+    display-drun:                       "";
     drun-display-format:                "{name}";
-    font:                               "Fira Code Retina 11";
+    font:                               "Symbols Nerd Font 10";
     icon-theme:                         "Dracula";
     scroll-method:                      0;
     show-icons:                         true;
@@ -27,14 +27,12 @@ window {
     background-color:                   @background;
 }
 
-
 mainbox {
     children:                           [ inputbar, listview ];
     border:                             0;
     padding:                            1em;
     spacing:                            2em;
 }
-
 
 message {
     border:       2px 0px 0px ;
@@ -45,7 +43,6 @@ message {
 textbox {
     text-color: @foreground;
 }
-
 
 inputbar {
     children:                           [ prompt, entry ];
@@ -70,6 +67,12 @@ entry {
     background-color:                   @green;
     placeholder:                        "";
 }
+
+entry {
+    cursor:                             text;
+    background-color:                   @background;
+    text-color:                         @foreground;
+} 
 
 
 listview {
@@ -158,8 +161,5 @@ element select {
 }
 
 
-entry {
-    cursor:                             text;
-    background-color:                   @background;
-    text-color:                         @foreground;
-}
+
+

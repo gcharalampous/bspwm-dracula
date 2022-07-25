@@ -10,11 +10,15 @@ In addition, my bspwm supports Scratchpads using the [tdrop](https://github.com/
 
 Please feel free to explore my **Dracula bspwm** configuration files and [sxhkd cheat-sheet](cheat_sheet.md). The [setup section](#setup) will guide you through the step-by-step installation process.
 
+| App Launcher                             | Powermenu                              |
+| ---------------------------------------- | -------------------------------------- |
+| ![img](screenshots/rof_app_launcher.gif) | ![img](screenshots/rofi_powermenu.gif) |
+
 <br/>
 
 Here are some details about my setup:
 
-- **OS:**    [Arco-Linux](https://arcolinux.com/)
+- **OS:**    [EndaveourOS](https://endeavouros.com/)
 - **WM:**    [bspwm](https://github.com/baskerville/bspwm)
 - **Bar:**     [polybar](https://github.com/jaagr/polybar)
 - **Compositor:**     [picom](https://github.com/yshui/picom)
