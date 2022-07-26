@@ -6,13 +6,13 @@ This is my very first attempt to rice Binary Space Partitioning Window Manager (
 
 In addition, my bspwm supports Scratchpads using the [tdrop](https://github.com/noctuid/tdrop) package.
 
-<img title="BSPWM-Scratchpads" src="screenshots/scratchpads.gif" alt="img" align="right" width="" data-align="center">
-
 Please feel free to explore my **Dracula bspwm** configuration files and [sxhkd cheat-sheet](cheat_sheet.md). The [setup section](#setup) will guide you through the step-by-step installation process.
 
-| App Launcher                             | Powermenu                              |
-| ---------------------------------------- | -------------------------------------- |
+| App Launcher (rofi)                      | Powermenu (rofi)                       |
+|:----------------------------------------:|:--------------------------------------:|
 | ![img](screenshots/rof_app_launcher.gif) | ![img](screenshots/rofi_powermenu.gif) |
+| Network Menu (rofi) [Under Development]  | Scratchpads (tdrop)                    |
+| ![img](screenshots/.gif)                 | ![img](screenshots/scratchpads.gif)    |
 
 <br/>
 
@@ -136,9 +136,22 @@ pkill [your-current-session]
 
 <br/>
 
+## Wallpapers
+
+ I am using variety as my wallpaper changer, hence, the wallpapers needs to be saved on variety favourite folder. ```~/.config/variety/favourites``` and choose the path at the application general settings.
+
+My favourite wallpapers selection can be originally found in [aynp]([GitHub - aynp/dracula-wallpapers: Wallpapers based on the Dracula Theme](https://github.com/aynp/dracula-wallpapers)) repo. More dracula papers can be found on the following repos.
+
+- [dracula]([GitHub - dracula/wallpaper: 🧛🏻‍♂️ Dark wallpapers for Dracula](https://github.com/dracula/wallpaper)) 
+
+- [helpotters]([GitHub - helpotters/dracula-wallpapers: Wallpapers based off of the Dracula Color Palette](https://github.com/helpotters/dracula-wallpapers))
+
+<br/>
+
 ## TO-Do
 
-- [ ] Add Wallpapers.
+- [x] Add Dracula Wallpapers.
+- [ ] Add Rofi Scripts
 - [ ] Add Animated .gif Files.
 - [ ] Add multi-Monitor Support.
 
