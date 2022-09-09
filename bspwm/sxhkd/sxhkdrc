@@ -190,6 +190,20 @@ ctrl + alt + s
 ctrl + alt + c
 	tdrop -am -w 60% -x 20% -y 30% alacritty -e calcurse
 
+# Remmina
+ctrl + alt + r
+    remmina 
+
+# Remmina Mauna-Kea
+ctrl + alt + r + m
+    remmina -c $HOME/.local/share/remmina/lumerical-suite_rdp_mauna-kea_169-237-79-112.remmina
+
+
+# Remmina Kilimanjaro
+ctrl + alt + r + k
+    remmina -c $HOME/.local/share/remmina/lumerical-suite_rdp_kilimanjaro_169-237-79-29.remmina
+
+
 
 ############################################
 # Drop-down Applications
@@ -246,11 +260,12 @@ Print
 ############################################
 
 
-# Rofi
+# Rofi App Launcher
 super + r
 	rofi -modi drun,run -show drun -show-icons
 
-
+super + x
+    ~/.config/rofi/powermenu/powermenu.sh
 
 ############################################
 # Mouse 
